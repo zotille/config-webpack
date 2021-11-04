@@ -6,5 +6,24 @@ module.exports = {
   output: {
     filename: "main.js",
   },
-  plugins: [new HtmlWebpackPlugin()],
+  mode: "development",
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src/index.html"),
+    }),
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+          },
+        },
+      },
+    ],
+  },
 };

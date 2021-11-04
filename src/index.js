@@ -1,2 +1,4 @@
-document.body.innerText = 'Hello World!';
-console.log('Hello World!');
+import React from "react";
+import reactDom from "react-dom";
+
+reactDom.render(<div>hello world!</div>, document.getElementById("zotille"));
