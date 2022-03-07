@@ -1,8 +1,9 @@
+import { Configuration } from 'webpack'
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-module.exports = {
-  entry: path.join(__dirname, "src", "index.js"),
+const config: Configuration = {
+  entry: path.join(__dirname, "src", "index.tsx"),
   output: {
     filename: "main.js",
   },
@@ -24,6 +25,9 @@ module.exports = {
           },
         },
       },
+      { test: /\.tsx?$/, loader: "ts-loader" },
     ],
   },
 };
+
+export default config;
