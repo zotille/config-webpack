@@ -8,6 +8,9 @@ const config: Configuration = {
     filename: "main.js",
   },
   mode: "development",
+  resolve: {
+    extensions: [".ts", ".tsx", ".js", ".json", ".wasm"],
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src/index.html"),
